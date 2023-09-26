@@ -27,8 +27,8 @@
   },
   "require": {
     "php": "^7.4.0 || ^8.0",
-    "typo3/cms-core": "^11.5.4",
-    "apache-solr-for-typo3/solr": "^11.5.0 <11.6.0"
+    "typo3/cms-core": "^11.5.4 || ^12",
+    "apache-solr-for-typo3/solr": "@dev"
   },
   "require-dev": {
     "phpspec/prophecy-phpunit":"*",

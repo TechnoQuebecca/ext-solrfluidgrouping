@@ -15,6 +15,7 @@
 
 namespace ApacheSolrForTypo3\Solrfluidgrouping\Search;
 
+use ApacheSolrForTypo3\Solrfluidgrouping\Query\Modifier\Grouping;
 use ApacheSolrForTypo3\Solr\Search\AbstractComponent;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -43,7 +44,7 @@ class GroupingComponent extends AbstractComponent
 
         if ($this->searchConfiguration['grouping'] && $groupingEnabled) {
             $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['solr']['modifySearchQuery']['fluid_grouping'] =
-                \ApacheSolrForTypo3\Solrfluidgrouping\Query\Modifier\Grouping::class;
+                Grouping::class;
         }
     }
 }

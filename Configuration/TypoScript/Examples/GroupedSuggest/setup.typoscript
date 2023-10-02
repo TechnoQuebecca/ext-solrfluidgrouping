@@ -7,10 +7,9 @@ tx_solr_suggest {
         disableAllHeaderCode = 1
         xhtml_cleaning = 0
         admPanel = 0
-        additionalHeaders = Content-type: text/plain
+        additionalHeaders.10.header = Content-type: text/plain
         no_cache = 0
     }
-
     10 = USER
     10 {
         userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
@@ -25,27 +24,26 @@ tx_solr_suggest {
 # Enable suggest
 plugin.tx_solr {
 
-	search {
-		grouping = 1
-		grouping {
-			numberOfGroups = 5
-			numberOfResultsPerGroup = 3
-			groups {
-				typeGroup {
-					field = type
-				}
-			}
-		}
-	}
-
-	suggest = 1
-	suggest {
-		numberOfSuggestions = 10
-		suggestField = spell
-		forceHttps = 0
-		showTopResults = 1
-		numberOfTopResults = 5
-	}
+    search {
+        grouping = 1
+        grouping {
+            numberOfGroups = 5
+            numberOfResultsPerGroup = 3
+            groups {
+                typeGroup {
+                    field = type
+                }
+            }
+        }
+    }
+    suggest = 1
+    suggest {
+        numberOfSuggestions = 10
+        suggestField = spell
+        forceHttps = 0
+        showTopResults = 1
+        numberOfTopResults = 5
+    }
 }
 
 # Load js files

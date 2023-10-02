@@ -9,7 +9,6 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Timo Hund, Frans Saris',
     'author_email' => 'solr-eb-support@dkd.de',
     'author_company' => 'dkd Internet Service GmbH',
-    'clearCacheOnLoad' => 0,
     'constraints' => [
         'depends' => [
             'solr' => '11.5.0-11.5.99',

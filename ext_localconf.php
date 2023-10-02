@@ -1,6 +1,6 @@
 <?php
 
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 (function () {
     if (class_exists(\ApacheSolrForTypo3\Solr\Search\SearchComponentManager::class)) {

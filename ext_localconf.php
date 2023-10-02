@@ -11,8 +11,17 @@ defined('TYPO3') or die();
         /* @var \ApacheSolrForTypo3\Solr\Domain\Search\ResultSet\Result\Parser\ResultParserRegistry $parserRegistry */
         $parserRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\ApacheSolrForTypo3\Solr\Domain\Search\ResultSet\Result\Parser\ResultParserRegistry::class);
 
-        if (!$parserRegistry->hasParser(\ApacheSolrForTypo3\Solrfluidgrouping\Domain\Search\ResultSet\Grouping\Parser\GroupedResultParser::class, 200)) {
-            $parserRegistry->registerParser(\ApacheSolrForTypo3\Solrfluidgrouping\Domain\Search\ResultSet\Grouping\Parser\GroupedResultParser::class, 200);
-        }
+        $priority = 200;
+        $registrationNotDone = true;
+        do {
+            try {
+                $parserRegistry->registerParser(
+                    \ApacheSolrForTypo3\Solrfluidgrouping\Domain\Search\ResultSet\Grouping\Parser\GroupedResultParser::class,
+                    $priority++
+                );
+                $registrationNotDone = false;
+            } catch (Exception) {
+            }
+        } while ($registrationNotDone && $priority < 220);
     }
 })();
